@@ -1,0 +1,11 @@
+autom4te.cache
+.deps
+Makefile
+config.log
+config.h
+config.status
+configure
+configure~
+stamp-h1
+unittest3
+compile_commands.json
