@@ -126,14 +126,26 @@ int main(int argc, char *argv[]) {
     }
 
     int start_num = atoi(argv[1]);
-
-    even_t *e = malloc(sizeof(even_t));
-    e->value = start_num;
+    if (start_num <= 0) {
+        printf("Please enter a positive integer\n");
+        return 1;
+    }
 
     wrapper_t *wrapper = malloc(sizeof(wrapper_t));
-    wrapper->data = (void *)e;
-    wrapper->type = EVEN;
     wrapper->count = 0;
+
+    if (start_num % 2 == 0) {
+        even_t *e = malloc(sizeof(even_t));
+        e->value = start_num;
+        wrapper->data = (void *)e;
+        wrapper->type = EVEN;
+    }else{
+        odd_t *o = malloc(sizeof(odd_t));
+        o->value = start_num;
+        wrapper->data = (void *)o;
+        wrapper->type = ODD;
+    }
+
     while (is_wrapper_done(wrapper) == false)
     {
         wrapper = choose(wrapper);
