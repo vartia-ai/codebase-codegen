@@ -10,8 +10,8 @@
 typedef enum
 {
     UNKNOWN,
-    EVEN,
-    ODD
+    ODD,
+    EVEN
 } num_type_t;
 
 struct even_struct
@@ -99,6 +99,7 @@ wrapper_t* choose(wrapper_t *wrapper)
 
 bool is_wrapper_done(wrapper_t *wrapper)
 {
+
     if (wrapper->type == EVEN)
     {
         even_t *even = (even_t *)wrapper->data;
@@ -118,10 +119,16 @@ bool is_wrapper_done(wrapper_t *wrapper)
     return false;
 }
 
-int main()
-{
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("Usage: %s <integer>\n", argv[0]);
+        return 1;
+    }
+
+    int start_num = atoi(argv[1]);
+
     even_t *e = malloc(sizeof(even_t));
-    e->value = 10;
+    e->value = start_num;
 
     wrapper_t *wrapper = malloc(sizeof(wrapper_t));
     wrapper->data = (void *)e;
