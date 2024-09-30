@@ -8,4 +8,5 @@ configure
 configure~
 stamp-h1
 unittest3
+codegen
 compile_commands.json

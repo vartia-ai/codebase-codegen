@@ -1,3 +1,4 @@
 # Makefile.am
-bin_PROGRAMS = unittest3
-unittest3_SOURCES = codegen.c
+bin_PROGRAMS = codegen
+codegen_SOURCES = codegen.c program.c
+include_HEADERS = program.h

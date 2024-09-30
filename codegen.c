@@ -1,8 +1,9 @@
 // main.c
 
 #include <stdio.h>
+#include "program.h"
 
 int main() {
-    printf("Hello, World!\n");
+    dummy_function("Hello, World!");
     return 0;
 }

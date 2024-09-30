@@ -1,5 +1,5 @@
 # configure.ac
-AC_INIT([unittest3], [1.0], [your.email@example.com])
+AC_INIT([cod], [1.0], [your.email@example.com])
 AM_INIT_AUTOMAKE
 
 # Set default CFLAGS if not already set by the user.
